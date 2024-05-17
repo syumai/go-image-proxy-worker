@@ -13,7 +13,7 @@
 - Open URLs with supported [ParseOptions](https://pkg.go.dev/willnorris.com/go/imageproxy#ParseOptions).
   - e.g. http://localhost:8787/600,fit,jpg,q80/https://r2-image-viewer.syumai.com/akiba.jpg
 
-### Requirements
+## Requirements
 
 This project requires these tools to be installed globally.
 
