@@ -70,7 +70,7 @@ export default {
   fetch,
 };
 
-type Size = number | `${number}` | "fit";
+type Size = number | `${number}`;
 
 /**
  * ParseOptions is a set of options for imageproxy based on: https://pkg.go.dev/willnorris.com/go/imageproxy#ParseOptions
@@ -107,9 +107,13 @@ export type ParseOptions = {
    * When no explicit crop mode is specified, the following rules are followed:
    * - If both width and height values are specified, the image will be scaled to fill the space, cropping if necessary to fit the exact dimension.
    * - If only one of the width or height values is specified, the image will be resized to fit the specified dimension, scaling the other dimension as needed to maintain the aspect ratio.
-   * If the "fit" option is specified together with a width and height value, the image will be resized to fit within a containing box of the specified size. As always, the original aspect ratio will be preserved. Specifying the "fit" option with only one of either width or height does the same thing as if "fit" had not been specified.
    */
   size?: `${Size}x${Size}` | `x${Size}` | `${Size}x` | Size;
+  /**
+   * If the "fit" option is specified together with a width and height value, the image will be resized to fit within a containing box of the specified size. As always, the original aspect ratio will be preserved.
+   * Specifying the "fit" option with only one of either width or height does the same thing as if "fit" had not been specified.
+   */
+  fit?: boolean;
   /**
    * The "r{degrees}" option will rotate the image the specified number of degrees, counter-clockwise.
    * Valid degrees values are 90, 180, and 270.
@@ -149,6 +153,9 @@ function convertParseOptions(opts: ParseOptions): string {
   }
   if (opts.size !== undefined) {
     parts.push(String(opts.size));
+  }
+  if (opts.fit !== undefined) {
+    parts.push("fit");
   }
   if (opts.rotationDegrees !== undefined) {
     parts.push(`r${opts.rotationDegrees}`);
