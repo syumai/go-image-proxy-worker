@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.2.1",
-    "@syumai/go-image-proxy-worker": "^0.1.0",
     "hono": "^4.3.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240512.0",
+    "@syumai/go-image-proxy-worker": "^0.1.0",
     "typescript": "^5.4.5",
     "wrangler": "^3.57.0"
   }
