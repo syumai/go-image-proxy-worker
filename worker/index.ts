@@ -72,6 +72,9 @@ export default {
 
 type Size = number | `${number}` | "fit";
 
+/**
+ * ParseOptions is a set of options for imageproxy based on: https://pkg.go.dev/willnorris.com/go/imageproxy#ParseOptions
+ */
 export type ParseOptions = {
   /**
    * X coordinate of top left rectangle corner (default: 0)
