@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "build-wasm": "GOOS=js GOARCH=wasm go build -o ./dist/app.wasm .",
@@ -15,11 +17,16 @@
     "release": "npm run build && npm run publint && npm publish"
   },
   "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
+    ".": [
+      {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      },
+      {
+        "types": "./dist/index.d.cts",
+        "require": "./dist/index.cjs"
+      }
+    ]
   },
   "license": "MIT",
   "publishConfig": {
