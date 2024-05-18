@@ -1,6 +1,6 @@
 name = "go-image-proxy-worker"
-main = "./js/worker.mjs"
+main = "./dist/index.js"
 compatibility_date = "2024-05-12"
 
 [build]
-command = "GOOS=js GOARCH=wasm go build -o ./build/app.wasm ."
+command = "npm run build-wasm && npm run build"

@@ -22,11 +22,13 @@ This project requires these tools to be installed globally.
 
 ## Development
 
+* At first, please run `npm i`.
+
 ### Commands
 
 ```
-npx wrangler dev    # run dev server
-npx wrangler deploy # deploy worker
+npm run dev    # run dev server
+npm run deploy # deploy worker
 ```
 
 ## Author

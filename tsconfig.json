@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "declaration": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "allowJs": true,
+    "types": ["node", "@cloudflare/workers-types"],
+    "rootDir": "worker",
+    "outDir": "dist",
+  },
+  "include": ["worker/**/*"],
+}
