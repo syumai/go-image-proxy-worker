@@ -15,7 +15,6 @@ const schema = z.object({
   file: z.union([
     z.literal("syumai.png"),
     z.literal("curry.jpg"),
-    z.literal("akiba.jpg"),
   ]),
   size: z.preprocess((x) => Number(x), z.number()).optional(),
   format: z
