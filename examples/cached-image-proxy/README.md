@@ -16,7 +16,7 @@ https://cached-image-proxy.syumai.com/?file=curry.jpg&size=500&format=jpeg
   - number
 * format
   - jpeg
-  - gif
+  - png
   - tiff
 
 ## Development
