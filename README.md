@@ -17,17 +17,16 @@
 
 This project requires these tools to be installed globally.
 
-- wrangler
-- go
+- Node.js
+- Go 1.22.3
 
 ## Development
 
 ### Commands
 
 ```
-make dev    # run dev server
-make build  # build Go Wasm binary
-make deploy # deploy worker
+npx wrangler dev    # run dev server
+npx wrangler deploy # deploy worker
 ```
 
 ## Author

@@ -1,8 +1,6 @@
 module github.com/syumai/go-image-proxy-worker
 
-go 1.21.3
-
-toolchain go1.22.1
+go 1.22.3
 
 require (
 	github.com/syumai/imageproxy v0.11.0
