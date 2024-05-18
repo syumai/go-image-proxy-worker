@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "files": ["dist"],
   "scripts": {
-    "build": "tsup ./worker/index.ts --format esm,cjs --dts --external 'cloudflare:sockets' --external './app.wasm'",
+    "build": "tsup",
     "build-wasm": "GOOS=js GOARCH=wasm go build -o ./dist/app.wasm .",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",

@@ -3,4 +3,4 @@ main = "./dist/index.js"
 compatibility_date = "2024-05-12"
 
 [build]
-command = "npm run build-wasm && npm run build"
+command = "npm run build && npm run build-wasm"
