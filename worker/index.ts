@@ -60,14 +60,14 @@ function createRuntimeContext(
   };
 }
 
-async function fetch(req: Request, env: Env, ctx: ExecutionContext) {
+async function handleFetch(req: Request, env: Env, ctx: ExecutionContext) {
   const binding: Binding = {};
   await run(createRuntimeContext(env, ctx, binding));
   return binding.handleRequest!(req);
 }
 
 export default {
-  fetch,
+  fetch: handleFetch,
 };
 
 type Size = number | `${number}`;
@@ -173,11 +173,22 @@ function convertParseOptions(opts: ParseOptions): string {
 }
 
 export class ImageProxy extends WorkerEntrypoint<Env> {
-  async fetch(req: Request) {
-    return await fetch(req, this.env, this.ctx);
-  }
   async proxy(baseUrl: string, imageUrl: string | URL, opts: ParseOptions) {
-    const url = new URL(`${convertParseOptions(opts)}/${imageUrl}`, baseUrl);
-    return await fetch(new Request(url, { method: "GET" }), this.env, this.ctx);
+    const url = new URL(
+      `${convertParseOptions(opts) || "100"}/${imageUrl
+        .toString()
+        .replaceAll("//", "/")}`,
+      baseUrl
+    );
+    return await handleFetch(
+      new Request(url, {
+        method: "GET",
+        headers: {
+          host: url.host,
+        },
+      }),
+      this.env,
+      this.ctx
+    );
   }
 }
