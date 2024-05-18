@@ -31,6 +31,12 @@ npm run dev    # run dev server
 npm run deploy # deploy worker
 ```
 
+## Using Service Bindings
+
+- Type definitions from `npm i -D @syumai/go-image-proxy-worker` is available.
+  - https://www.npmjs.com/package/@syumai/go-image-proxy-worker
+- See: [cached-image-proxy example](https://github.com/syumai/go-image-proxy-worker/tree/main/examples/cached-image-proxy).
+
 ## Author
 
 syumai

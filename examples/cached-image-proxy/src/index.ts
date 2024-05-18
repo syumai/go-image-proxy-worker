@@ -3,7 +3,7 @@ import { Hono } from "hono";
 import { cache } from "hono/cache";
 import { etag } from "hono/etag";
 import { z } from "zod";
-import type { ImageProxy, ParseOptions } from "../../../dist";
+import type { ImageProxy, ParseOptions } from "@syumai/go-image-proxy-worker";
 
 type Bindings = {
   IMAGE_PROXY: Service<ImageProxy>;

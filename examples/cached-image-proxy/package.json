@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.2.1",
+    "@syumai/go-image-proxy-worker": "^0.1.0",
     "hono": "^4.3.7",
     "zod": "^3.23.8"
   },
